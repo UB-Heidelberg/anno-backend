@@ -1,20 +1,12 @@
-node_modules
-*-debug.log
-store.nedb
-*~
-store.nedb*
-acl.json
-users.json
-collections.json
-profile.sh
-backup
-dist/*
-!dist/axios.min.js
-!dist/jquery-ui.min.js
-!dist/quill.js
-!dist/vue.js
-!dist/vue.min.js
-!dist/vuex.js
-!dist/promise.min.js
-!dist/babel-polyfill.min.js
-!dist/authorities-client.js
+
+/node_modules
+/*.log
+
+# local config:
+/acl.json
+/collections.json
+/users.json
+/users.yml
+/profile.sh
+
+# unsorted:
