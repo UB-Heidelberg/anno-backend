@@ -43,7 +43,7 @@ $(DEPS): node_modules/@kba/%: anno-common/%
 	cd "$<"; npm link
 	npm link "@kba/$*"
 
-install: bootstrap symlink
+install: bootstrap
 	npm install
 
 start:
