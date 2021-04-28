@@ -3,7 +3,7 @@
 > Setup of [anno](https://github.com/kba/anno) for a server with MongoDB backend
 
 This repo contains no code but the configuration files and scripts to deploy
-and run a [Web Annotation Protocol Server](https://www.w3.org/TR/annotation-protocol/) 
+and run a [Web Annotation Protocol Server](https://www.w3.org/TR/annotation-protocol/)
 with a [few extensions](https://github.com/kba/anno#concepts).
 
 It uses [Production Process Manager](https://github.com/Unitech/pm2) to deploy
@@ -63,7 +63,18 @@ these are often out-of-date.
 
 Make sure that the `anno` monorepo is located at `./anno-common`.
 
-It is provided as a submodule which you can initialize after shallow (non-recursive) clone with
+If you do not have strong opinion on which anno-common you want to use and
+how to obtain it, we recommend you symlink (see below) the one declared as
+a submodule. It should always point to the latest known-good (compatible)
+version suitable for this version of anno-backend.
+
+To install the symlink:
+
+```sh
+ln --symbolic --no-target-directory -- anno-common.known-good anno-common
+```
+
+You can initialize the submodule(s) after shallow (non-recursive) clone with
 
 ```sh
 git submodule update --init --recursive
@@ -74,6 +85,7 @@ Otherwise, clone the repository recursively from Github:
 ```sh
 git clone --recursive https://github.com/kba/anno anno-common
 ```
+
 
 ### Install dependencies
 
@@ -227,7 +239,7 @@ A rule is an ordered pair of *condition* and *result*.
 
 E.g. The rule `[{collection: 'foo'}, {role: 'bar'}]` will match only for
 requests on the `foo` collection and in these cases will set the role of the
-particular user to `bar`. 
+particular user to `bar`.
 
 #### Example user
 

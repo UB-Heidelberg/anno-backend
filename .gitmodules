@@ -1,3 +1,3 @@
 [submodule "anno-common"]
-	path = anno-common
-	url = https://github.com/kba/anno
+	path = anno-common.known-good
+	url = https://github.com/mk-pmb/anno-common
