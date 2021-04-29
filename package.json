@@ -1,8 +1,7 @@
-{
-  "name": "anno-backend-ubhd",
+{ "name": "anno-backend",
   "private": true,
   "scripts": {
-    "start": "bash ./start.sh"
+    "sh": "\"$@\""
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
