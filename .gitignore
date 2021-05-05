@@ -12,4 +12,7 @@
 # potential local diversions:
 /anno-common
 
+# Stuff on other branches not ready for public repo yet:
+/dbscripts
+
 # unsorted:
