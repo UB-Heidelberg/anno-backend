@@ -35,15 +35,18 @@ help:
 	@echo "  BACKUP               Basename of the backup to create/restore. Defaults to timestamp ($(BACKUP))"
 
 bootstrap:
-	cd anno-common; npm install; ./node_modules/.bin/lerna bootstrap
+	[ -d anno-common ] || ln --symbolic --no-target-directory -- anno-common.known-good anno-common
+	[ -f anno-common/package.json ] || git submodule update --init --recursive
+	( cd anno-common && npm install && npm run bootstrap ) 2>&1 | ( ts || cat ) | tee -- make.bootstrap.log
 
 .PHONY: $(DEPS) symlink bootstrap install start
 symlink: $(DEPS)
 $(DEPS): node_modules/@kba/%: anno-common/%
-	cd "$<"; npm link
+	cd "$<"
+	npm link
 	npm link "@kba/$*"
 
-install: bootstrap symlink
+install: bootstrap
 	npm install
 
 start:
