@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "check-yaml-syntax": "yamllint \"$@\"",
     "sh": "\"$@\""
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "envyconf": "0.0.5",
     "es6-promise-polyfill": "^1.2.0",
     "pm2": "^2.5.0",
-    "slugid": "^1.1.0"
+    "slugid": "^1.1.0",
+    "yaml-lint": "^1.2.4"
   }
 }

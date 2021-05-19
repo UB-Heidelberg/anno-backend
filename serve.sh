@@ -13,6 +13,9 @@ function start_anno_backend () {
   [ -f users.yml ] || return 4$(
     echo "E: No users.yml. An examplefile can be found in" \
       "anno-common/anno-plugins/users-example.yml" >&2)
+  local LINT_YAMLS=(
+    users.yml
+    )
 
   local PM2_HOME="$(dirname -- "$SELFPATH")"
   local WANT_USER="$(stat -c '%U#%u' -- "$PM2_HOME")"
@@ -44,6 +47,9 @@ function start_anno_backend () {
   case "$1" in
     pm2.*.yml ) local PM2_CFG="$1"; shift;;
   esac
+
+  [ -z "$PM2_CFG" ] || LINT_YAMLS+=( "$PM2_CFG" )
+  npm run check-yaml-syntax "${LINT_YAMLS[@]}" || return $?
 
   if [ "$#" == 0 ]; then
     [ -n "$PM2_CFG" ] || return 4$(
