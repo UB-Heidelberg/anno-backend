@@ -41,6 +41,10 @@ function start_anno_backend () {
     pm2
     )
 
+  case "$1" in
+    pm2.*.yml ) local PM2_CFG="$1"; shift;;
+  esac
+
   if [ "$#" == 0 ]; then
     [ -n "$PM2_CFG" ] || return 4$(
       echo "E: Please set env var PM2_CFG to a config file path/name," \
