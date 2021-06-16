@@ -16,7 +16,7 @@ apps:
       ANNO_PORT: 33321
       ANNO_OPENAPI_HOST: "localhost:33321"
       ANNO_OPENAPI_BASEPATH: "/anno"
-      ANNO_BASE_URL: 'https://localhost:33321'
+      ANNO_BASE_URL: 'http://localhost:33321'
       ANNO_BASE_PATH: '/anno'
       ANNO_SMTP_HOST: 'localhost'
       ANNO_SMTP_PORT: 25
