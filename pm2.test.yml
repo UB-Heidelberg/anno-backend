@@ -2,7 +2,9 @@ apps:
   - name:   "anno-test"
     script: "anno-common/anno-server/server.js"
     watch:  ['anno-common/*/*.js', 'anno-common/*/*.js']
-    ignore_watch: ["node_modules"]
+    ignore_watch:
+      - 'node_modules'
+      - '**/node_modules'
     autorestart: true
     no_daemon: true
     restart_delay: 1000
