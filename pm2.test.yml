@@ -10,7 +10,13 @@ apps:
     restart_delay: 1000
     env:
       ANNO_LOGLEVEL: silly
-      ANNO_ENABLE_JWT_AUTH: false
+      ANNO_ENABLE_JWT_AUTH: true
+
+      ANNO_STORE_HOOKS_PRE: >
+        @kba/anno-plugins:PreUserFile
+        @kba/anno-plugins:CreatorInjectorFile
+        @kba/anno-plugins:PreAclFile
+
       ANNO_STORE_HOOKS_POST: >
         @kba/anno-plugins:CreatorInjectorFile
 
