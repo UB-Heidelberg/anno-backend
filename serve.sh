@@ -10,11 +10,15 @@ function start_anno_backend () {
   local ABE_CMD=()
 
   verify_watchers_limit || return $?
-  [ -f users.yml ] || return 4$(
-    echo "E: No users.yml. An examplefile can be found in" \
-      "anno-common/anno-plugins/users-example.yml" >&2)
+  [ -f acl.yaml ] || return 4$(
+    echo "E: No acl.yaml. Some example files can be found in" \
+      "anno-common/anno-plugins/acl.*.yaml" >&2)
+  [ -f users.yaml ] || return 4$(
+    echo "E: No users.yaml. An example file can be found in" \
+      "anno-common/anno-plugins/users-example.yaml" >&2)
   local LINT_YAMLS=(
-    users.yml
+    acl.yaml
+    users.yaml
     )
 
   local PM2_HOME="$(dirname -- "$SELFPATH")"

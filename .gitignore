@@ -3,11 +3,10 @@
 /*.log
 
 # local config:
-/acl.json
-/collections.json
-/users.json
-/users.yml
+/acl.yaml
+/collections.yaml
 /profile.sh
+/users.yaml
 
 # potential local diversions:
 /anno-common
