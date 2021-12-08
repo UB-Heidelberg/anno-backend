@@ -21,8 +21,9 @@ apps:
         @kba/anno-plugins:CreatorInjectorFile
 
       ANNO_USER_FILE: "./users.yaml"
-      ANNO_ACL_FILE: "./anno-common/anno-plugins/acl.anarchy.yaml"
+      # ANNO_ACL_FILE: "./anno-common/anno-plugins/acl.anarchy.yaml"
       # ANNO_ACL_FILE: "./anno-common/anno-plugins/acl.use_defaults.yaml"
+      ANNO_ACL_FILE: "./acl.yaml"
       ANNO_STORE: '@kba/anno-store-file'
       ANNO_PORT: 33321
       ANNO_OPENAPI_HOST: "localhost:33321"
