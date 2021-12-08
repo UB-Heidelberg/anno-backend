@@ -155,7 +155,7 @@ as users, collections and access rules can be placed in files.
 
 ### Collections
 
-Collections can be defined either statically or in a JSON or YAML file (must end in `.json` or `.yml` resp.).
+Collections can be defined either statically or in a JSON or YAML file (must end in `.json` or `.yaml` resp.).
 
 The default collection is named `default`.
 
@@ -189,7 +189,7 @@ collection. This is necessary for ACL rules based on target-specific metadata.
 
 ### Users
 
-Users can be defined either statically or in a JSON or YAML file (must end in `.json` or `.yml` resp.).
+Users can be defined either statically or in a JSON or YAML file (must end in `.json` or `.yaml` resp.).
 
 There is no default user.
 

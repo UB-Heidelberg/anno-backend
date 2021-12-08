@@ -13,12 +13,16 @@ function start_anno_backend () {
   [ -f acl.yaml ] || return 4$(
     echo "E: No acl.yaml. Some example files can be found in" \
       "anno-common/anno-plugins/acl.*.yaml" >&2)
-  [ -f users.yaml ] || return 4$(
-    echo "E: No users.yaml. An example file can be found in" \
-      "anno-common/anno-plugins/users-example.yaml" >&2)
+  local ITEM=
+  for ITEM in collections users; do
+    [ -f "$ITEM".yaml ] || return 4$(
+      echo "E: No $ITEM.yaml. An example file can be found in" \
+        "anno-common/anno-plugins/${ITEM}-example.yaml" >&2)
+  done
   local LINT_YAMLS=(
     acl.yaml
     users.yaml
+    collections.yaml
     )
 
   local PM2_HOME="$(dirname -- "$SELFPATH")"

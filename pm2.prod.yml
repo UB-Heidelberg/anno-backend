@@ -11,10 +11,10 @@ apps:
     env:
       # ANNO_LOGLEVEL: 'silly'
       ANNO_LOGLEVEL: 'debug'
-      ANNO_ACL_FILE: "./acl.yml"
+      ANNO_ACL_FILE: "./acl.yaml"
       ANNO_DIST_DIR: /usr/local/AnnotationService/dist
-      ANNO_USER_FILE: "./users.yml"
-      ANNO_COLLECTION_FILE: "./collections.yml"
+      ANNO_USER_FILE: "./users.yaml"
+      ANNO_COLLECTION_FILE: "./collections.yaml"
       ANNO_MONGODB_PORT: 27017
       ANNO_ENABLE_JWT_AUTH: true
       ANNO_SERVER_AUTH: 'shibboleth'
